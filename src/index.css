@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+#qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+}
+
+
