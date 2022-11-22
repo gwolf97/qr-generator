@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom'
+import React from 'react'
+import { QRCode } from 'react-qrcode'
+import { useQRCode } from 'react-qrcode'
 
-function App() {
+
+// hooks
+
+function App () {
+  const [value, setValue] = React.useState('https://www.1stg.me')
+  const dataUrl = useQRCode(value)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <img src={dataUrl} />
+      <input onChange={e => setValue(e.currentTarget.value)} />
+    </>
+  )
 }
 
-export default App;
+
+export default App
